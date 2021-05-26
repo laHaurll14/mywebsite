@@ -1,0 +1,28 @@
+body {
+  background-image: url('backgroundimages/IMG-9724.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  //background-color: green;
+  padding-top: 2%;
+  padding-bottom: 6%;
+}
+
+#yee {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+    width:100%;
+    padding: 5%;
+    transition: transform 1s;
+    margin: 0 auto;
+}
+
+img:hover {
+  transform: scale(1.1);
+}

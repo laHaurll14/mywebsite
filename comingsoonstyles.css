@@ -1,0 +1,34 @@
+body {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 4%;
+  padding-bottom: 6%;
+}
+
+#yert {
+  width: 60%;
+}
+
+#yeer {
+  width: 30%;
+  padding-top: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  width: 80%;
+  transition: transform 1s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spinningg:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=comingsoonstyles.css.map */
