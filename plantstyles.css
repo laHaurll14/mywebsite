@@ -1,5 +1,5 @@
 body {
-  background-image: url("backgroundimages/woop.png");
+  background-image: url("backgroundimages/IMG-8469.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -20,6 +20,14 @@ img {
   padding: 5%;
   transition: transform 1s;
   margin: 0 auto;
+}
+
+#yeer {
+  width: 30%;
+  padding-top: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img:hover {
