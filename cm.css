@@ -1,0 +1,29 @@
+body {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 2%;
+  padding-bottom: 6%;
+}
+
+#yee {
+  display: block;
+  width: 70%;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  width: 100%;
+  padding: 5%;
+  transition: transform 1s;
+  margin: 0 auto;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=cm.css.map */

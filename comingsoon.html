@@ -14,14 +14,13 @@
         <div class="row"> -->
         <ul id="list" style="list-style: none;">
           <li>
-            <img data-value="audio/caves.mp3" src="playlist/EE4D5731-2FA6-4910-A90C-A9CA658B86A9.JPEG" class="spinningg"></>
-          </li>
-          <li>
             <img data-value="audio/gloria.mp3" src="playlist/BAEA8B9A-8599-4BCA-8F05-6CE73BDFBF78.PNG" class="spinningg"></>
           </li>
+          <!--
           <li>
             <img data-value="audio/star.mp3" src="playlist/1438AD8D-0DA7-4F02-95D1-255A10CE6A8C.PNG" class="spinningg"></>
           </li>
+        -->
           <li>
             <img data-value="audio/surfcurse.mp3" src="playlist/E8F4E3CA-0527-43D0-BEA6-24BEAFB3003A.JPEG" class="spinningg"></>
           </li>
@@ -35,20 +34,45 @@
             <img data-value="audio/fireandtheflood.mp3" src="playlist/619603A1-CE55-49D6-AB02-3B12B818249B.JPEG" class="spinningg"></>
           </li>
           <li>
+            <img data-value="audio/caves.mp3" src="playlist/EE4D5731-2FA6-4910-A90C-A9CA658B86A9.JPEG" class="spinningg"></>
+          </li>
+          <li>
             <img data-value="audio/apocalypse.mp3" src="playlist/2AF14ED0-D0F3-4C20-8704-6B890D131966.JPEG" class="spinningg"></>
         </li>
           <li>
             <img data-value="audio/thismustbetheplace.mp3" src="playlist/E5527C6B-00AB-47BA-A43B-28EAD70FDE23.JPEG" class="spinningg"></>
           </li>
           <li>
-            <img data-value="audio/sounds.mp3" src="playlist/0B95F6F8-FB46-4470-AADD-36A07CA395F4.JPEG" class="spinningg"></>
+            <img data-value="audio/sleeponthefloor.mp3" src="playlist/A759B200-9C47-4113-938D-EB6D31C9F417.JPEG" class="spinningg"></>
           </li>
           <li>
-            <img data-value="audio/sleeponthefloor.mp3" src="playlist/A759B200-9C47-4113-938D-EB6D31C9F417.JPEG" class="spinningg"></>
+            <img data-value="audio/baba.mp3" src="playlist/404AFEBA-1B9F-4379-A398-9FA4F42D287C.JPEG" class="spinningg"></>
+          </li>
+          <li>
+            <img data-value="audio/cheerleader.mp3" src="playlist/745AEC24-F6CF-4C57-82FA-129CF61BA992.JPEG" class="spinningg"></>
+          </li>
+          <li>
+            <img data-value="audio/allthatandmore.mp3" src="playlist/C42FA960-C480-44A8-AB9F-727ABBCFE87B.JPEG" class="spinningg"></>
+          </li>
+          <li>
+            <img data-value="audio/nightchanges.mp3" src="playlist/2BDE1752-566B-454B-A2A7-B6A9EA3E8F98.JPEG" class="spinningg"></>
+          </li>
+          <li>
+            <img data-value="audio/modernlove.mp3" src="playlist/518A8FD3-1B33-401B-B958-BBC5BAE2D535.JPEG" class="spinningg"></>
+          </li>
+          <li>
+            <img data-value="audio/cecilia.mp3" src="playlist/59502DE1-A1A2-4329-B49D-2F51FF0D44F6.JPEG" class="spinningg"></>
+          </li>
+          <li>
+            <img data-value="audio/youmakemydreams.mp3" src="playlist/EFD2F9CA-E14E-4C3C-B9C0-64FD52164C49.JPEG" class="spinningg"></>
           </li>
           </ul>
           <audio id="audio" controls="controls" hidden="true">
               <source id="audioSource" src=""></source>
+              Your browser does not support the audio format.
+          </audio>
+          <audio id="audiod" controls="controls" hidden="true">
+              <source id="audioSourced" src=""></source>
               Your browser does not support the audio format.
           </audio>
           <div id="yeer">
@@ -60,6 +84,8 @@
       </div> -->
       <script>
       var yee = false; //is false, audio is off
+      var pastsong = document.getElementById('audioSourced');
+      pastsong.src = "";
       list.onclick = function(e) {
         e.preventDefault();
 
@@ -67,16 +93,33 @@
         var audio = document.getElementById('audio');
 
         var source = document.getElementById('audioSource');
-        source.src = elm.getAttribute('data-value');
+        if (pastsong.src == "")
+        {
+          pastsong.src = elm.getAttribute('data-value');
+          source.src = elm.getAttribute('data-value');
+        }
+        else {
+         source.src = elm.getAttribute('data-value');
+        }
+
+        //console.log("pastsong " + pastsong.src);
+        //console.log("source " + source.src);
         audio.load();
         if (yee == false) {
           audio.play();
           yee = true;
         }
-        else {
+        else if (yee == true && source.src != pastsong.src)
+        {
+          audio.play();
+          yee = true;
+        }
+        else if (yee == true && source.src == pastsong.src) {
+          //console.log("sceet");
           audio.pause();
           yee = false;
         }
+        pastsong.src = elm.getAttribute('data-value');
       };
       </script>
     </body>
